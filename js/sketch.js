@@ -1,7 +1,7 @@
 var p1;
 var p2;
 var ball;
-var speed = 10;
+var speed = 7;
 var intro = true;
 
 function setup(){
