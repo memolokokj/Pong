@@ -1,14 +1,14 @@
 var p1;
 var p2;
 var ball;
-var speed = 7;
+var speed = 13;
 var intro = true;
 
 function setup(){
 	createCanvas(windowWidth, windowHeight);
-	p1 = new Stick("red", 0, height/2-50);
-	p2 = new Stick("blue", width-20, height/2-50);
-	ball = new Ball(width/2, height/2, 20, speed, p1, p2);
+	p1 = new Stick("red", 20, height/2-50);
+	p2 = new Stick("blue", width-30, height/2-50);
+	ball = new Ball(width/2, height/2, 20, 7, p1, p2);
 }
 
 function draw(){
@@ -34,6 +34,8 @@ function draw(){
 		pop();
 		p1.display();
 		p2.display();
+		//p1.bot(ball.y-p2.h/2);
+		p2.bot(ball.y-p2.h/2);
 		ball.display();
 		ball.hasCollision(p1.x, p1.y, p1.w, p1.h, p1.direction, p1.c);
 		ball.hasCollision(p2.x, p2.y, p2.w, p2.h, p2.direction, p2.c);
@@ -53,8 +55,8 @@ function move(){
 	else if(keyIsDown(83))
 		p1.move(speed);
 
-	if(keyIsDown(UP_ARROW))
+	/*if(keyIsDown(UP_ARROW))
 		p2.move(-speed);
 	else if(keyIsDown(DOWN_ARROW))
-		p2.move(speed);
+		p2.move(speed);*/
 }

@@ -29,9 +29,12 @@ class Ball{
   hasCollision(x, y, w, h, direction, c){
     if(x < this.x+this.d/2 && x+w >= this.x-this.d/2 && y < this.y && y+h >= this.y)
     {
-      this.stepX *= -1;
-      this.stepY = (direction?Math.abs(this.stepX):Math.abs(this.stepX)*-1);
-      this.changeColor(c);
+    	if(Math.abs(this.stepX) <= 15)
+    		this.stepX = (this.stepX<0?this.stepX-.2:this.stepX+.2);
+      	this.stepX *= -1;
+      	this.stepY = (direction?Math.abs(this.stepX):Math.abs(this.stepX)*-1);
+      	this.changeColor(c);
+      	console.log(this.stepX);
     }
   }
 
@@ -46,15 +49,22 @@ class Ball{
     if(this.x - this.d/2 <= 0 || this.x + this.d/2 >= width)
     {	
     	if(this.x - this.d/2 <= 0)
+    	{
     		p2.score+=1;
+    		this.stepX = 7;
+    	}
     	else
+    	{
     		p1.score+=1;
+    		this.stepX = -7;
+    	}
     	this.x = width/2;
     	this.y = height/2;
     	this.stepY = 0;
-    	this.p1.x = 0;
+    	
+    	this.p1.x = 20;
     	this.p1.y = height/2-50;
-    	this.p2.x = width-20;
+    	this.p2.x = width-30;
     	this.p2.y = height/2-50;
     }
   }

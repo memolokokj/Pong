@@ -2,7 +2,7 @@ class Stick{
 
   constructor(c, x, y){
     this.c = c;
-    this.w = 20;
+    this.w = 10;
     this.h = 100;
     this.x = x;
     this.y = y;
@@ -28,7 +28,10 @@ class Stick{
       this.y += y;
       this.changeDirection(y>0?true:false);
     }
-    
+  }
+
+  bot(y){
+    this.y = y;
   }
 
   changeDirection(direction){
