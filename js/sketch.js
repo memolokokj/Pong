@@ -34,7 +34,7 @@ function draw(){
 		pop();
 		p1.display();
 		p2.display();
-		//p1.bot(ball.y-p2.h/2);
+		p1.bot(ball.y-p2.h/2);
 		p2.bot(ball.y-p2.h/2);
 		ball.display();
 		ball.hasCollision(p1.x, p1.y, p1.w, p1.h, p1.direction, p1.c);
