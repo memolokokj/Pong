@@ -29,7 +29,7 @@ class Ball{
   hasCollision(x, y, w, h, direction, c){
     if(x < this.x+this.d/2 && x+w >= this.x-this.d/2 && y < this.y && y+h >= this.y)
     {
-    	if(Math.abs(this.stepX) <= 15)
+    	if(Math.abs(this.stepX) <= 150)
     		this.stepX = (this.stepX<0?this.stepX-.2:this.stepX+.2);
       	this.stepX *= -1;
       	this.stepY = (direction?Math.abs(this.stepX):Math.abs(this.stepX)*-1);
