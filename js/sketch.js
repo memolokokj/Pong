@@ -50,12 +50,12 @@ function keyPressed(){
 }
 
 function move(){
-	if(keyIsDown(87))
+	/*if(keyIsDown(87))
 		p1.move(-speed);
 	else if(keyIsDown(83))
 		p1.move(speed);
 
-	/*if(keyIsDown(UP_ARROW))
+	if(keyIsDown(UP_ARROW))
 		p2.move(-speed);
 	else if(keyIsDown(DOWN_ARROW))
 		p2.move(speed);*/
